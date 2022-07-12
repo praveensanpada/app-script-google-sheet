@@ -1,0 +1,15 @@
+function myFunction() {
+
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var rows = sheet.getDataRange().getValues();
+
+  for (var counter = 0; counter < rows.length; counter++) {
+    var email = rows[counter][1];
+    var subject = "Happy Birthday " + rows[counter][0] + " - From Auriga IT Consulting Private Limited";
+    var body = "Dear " + rows[counter][0] + ",\n\nThis is a special day, a day when we have lots of expectations - we show it or not. A day which brings back loads of memories, especially those bachpann ki yaadein - wo papa mummy ka ek gift, wo class main toffee/chocolate distribution and giving an extra one to your crush, wo family ka chupakar surprise decoration aur wo naye kapdo main shaam ki party. A day which reminds us that though each passing day we may be the same but each passing year has brought transformation into us.\n\nToday take a pause, feel the moment, notice life because this life has given us this special day. And on this day of yours we wish you beautiful surprises for every candle on your birthday cake. May you tick lots of boxes in your bucket list this year and add many more and may each day Celebrations Galore!\n\n\nWaiting for the Party!\nAuriga Family :D\nAuriga IT Consulting Private Limited";
+
+    MailApp.sendEmail(email, subject, body);
+  }
+
+
+}
